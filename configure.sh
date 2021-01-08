@@ -15,15 +15,21 @@ install -d /usr/local/etc/v2ray
 cat << EOF > /usr/local/etc/v2ray/config.json
 {
     "inbounds": [
-        "timeout": 0,
-        "accounts": [
-            {
-                "user": "123",
-                "pass": "123"
+        {
+            "port": $PORT,
+            "protocol": "http",
+            "settings": {
+                "accounts": [
+                    {
+                        "pass": "xiaomo",
+                        "user": "xiaomo"
+                    }
+                ],
+                "allowTransparent": false,
+                "timeout": 300,
+                "userLevel": 0
             }
-        ],
-        "allowTransparent": false,
-        "userLevel": 0
+        }
     ],
     "outbounds": [
         {
